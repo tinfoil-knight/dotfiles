@@ -1,0 +1,16 @@
+[user]
+    name = Kunal Kundu
+    email = kunal99kundu@gmail.com
+[github]
+    user = tinfoil-knight
+[alias]
+    s       = status
+    a       = add
+    aa      = add --all
+    cm      = commit -m
+    pom     = push origin master
+    puom    = pull origin master
+    co      = checkout
+    cob     = checkout -b
+    ls      = log --oneline
+

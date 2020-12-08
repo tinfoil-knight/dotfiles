@@ -12,23 +12,17 @@ fi
 # Upgrade any already-installed formulae.
 brew upgrade
 
-brew install git
-
-brew cask install google-chrome
-
 # dev
-brew cask install visual-studio-code
-brew install tmux
-brew install elixir
+brew install git
 brew install postgresql
-
-brew cask install psequel
-brew cask install dash
-brew cask install keycastr
-brew cask install tableplus
+brew tap mongodb/brew && brew install mongodb-community
+brew install yarn
+brew install tree
 brew cask install postman
+brew cask install visual-studio-code
 
-# brew tap heroku/brew && brew install heroku
+# applications
+brew cask install google-chrome
 
 # Remove outdated versions from the cellar.
 brew cleanup

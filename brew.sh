@@ -14,7 +14,6 @@ brew upgrade
 
 # dev
 brew install git
-brew install postgresql
 brew tap mongodb/brew && brew install mongodb-community
 brew install yarn
 brew install tree

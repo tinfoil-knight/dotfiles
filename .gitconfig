@@ -1,16 +1,21 @@
 [user]
-    name = Kunal Kundu
-    email = kunal99kundu@gmail.com
+    name    = Kunal Kundu
+    email   = kunal99kundu@gmail.com
 [github]
-    user = tinfoil-knight
+    user    = tinfoil-knight
+[core]
+    editor       = vim
+    excludesfile = /Users/kunalkundu/.gitignore
 [alias]
     s       = status
     d       = diff
     dc      = diff --cached
+    ds      = diff --stat
     a       = add
     aa      = add --all
     cm      = commit -m
-    ca      = commit --amend -m  
+    ca      = commit --amend -m
+    can     = commit --amend --no-edit  
     p       = push
     po      = push origin
     pom     = push origin master
@@ -27,10 +32,12 @@
     f       = fetch
     fo      = fetch origin
     ls      = log --oneline
-    last    = log -1
-    lastp   = log -p -1
-    st      = stash
+    last    = log -p -1
+    st      = !git add --all && git stash
+    stl     = stash list --stat
     stp     = stash pop
     alias   = !git config -l | grep alias | cut -c 7-
-
-
+    wip     = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+    cp      = cherry-pick
+[credential]
+    helper = osxkeychain

@@ -4,8 +4,9 @@
 [github]
     user    = tinfoil-knight
 [core]
-    editor       = vim
-    excludesfile = /Users/kunalkundu/.gitignore
+    editor        = vim
+    excludesfile  = /Users/kunalkundu/.gitignore
+    signingkey    = 36B13A431E97C3E3
 [alias]
     s       = status
     d       = diff

@@ -1,3 +1,6 @@
+# Bash Prompt
+PS1='\W\$ '
+
 # Haskell
 export PATH=~/.local/bin:$PATH
 

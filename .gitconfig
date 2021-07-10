@@ -5,8 +5,12 @@
     user    = tinfoil-knight
 [core]
     editor        = vim
-    excludesfile  = /Users/kunalkundu/.gitignore
+    excludesfile  = ~/.gitignore
     signingkey    = 36B13A431E97C3E3
+[credential]
+    helper = osxkeychain
+[init]
+    defaultBranch = master
 [alias]
     s       = status
     d       = diff
@@ -30,6 +34,8 @@
     cob     = checkout -b
     cor     = checkout --track
     com     = checkout master
+    # cod: checkout to the default branch
+    cod     = !git switch $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
     f       = fetch
     fo      = fetch origin
     ls      = log --oneline
@@ -37,8 +43,7 @@
     st      = !git add --all && git stash
     stl     = stash list --stat
     stp     = stash pop
+    sta     = git stash apply
     alias   = !git config -l | grep alias | cut -c 7-
     wip     = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
     cp      = cherry-pick
-[credential]
-    helper = osxkeychain

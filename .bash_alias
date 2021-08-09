@@ -1,0 +1,13 @@
+alias air='~/go/bin/air'
+alias activate='source venv/bin/activate'
+alias la='ls -lAh'
+alias mgo='brew services run mongodb-community'
+alias pg='brew services run postgresql'
+alias hepl='stack ghci'
+alias docs='npx redoc-cli serve open-api.yaml --watch'
+alias rst='tput reset'
+alias py='python3'
+
+alias '..'='cd ..' 
+alias '...'='cd ../..'
+

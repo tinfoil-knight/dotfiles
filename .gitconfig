@@ -29,6 +29,8 @@
     pl      = pull
     plo     = pull origin
     plom    = pull origin master
+		# plod: pull from the default remote branch
+		plod		= !git pull origin $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
     sync    = !git pull && git push
     # br: -r for remote branches
     br      = branch
@@ -42,6 +44,7 @@
     cod	    = !git switch $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
     f       = fetch
     fo      = fetch origin
+		rename	= branch -m
     ls      = log --oneline
     last    = log -p -1
     st      = !git add --all && git stash

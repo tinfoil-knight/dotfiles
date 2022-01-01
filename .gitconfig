@@ -1,56 +1,68 @@
 [user]
-    name       = Kunal Kundu
-    email      = kunal99kundu@gmail.com
-    signingkey = 142E0220E496E871
+	name       = Kunal Kundu
+	email      = kunal99kundu@gmail.com
+	signingkey = 142E0220E496E871
 [github]
-    user    = tinfoil-knight
+	user = tinfoil-knight
 [core]
-    editor       = vim
-    excludesfile = ~/.gitignore
+	editor       = vim
+	excludesfile = /Users/kunalkundu/.gitignore
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [init]
-    defaultBranch = master
+	defaultBranch = master
 [gpg]
-    program = gpg
+	program = gpg
 [alias]
-    s       = status
-    d       = diff
-    dc      = diff --cached
-    ds      = diff --stat
-    a       = add
-    aa      = add --all
-    cm      = commit -S -m
-    ca      = commit --amend -S -m
-    can     = commit --amend --no-edit -S
-    p       = push
-    po      = push origin
-    pom     = push origin master
-    pl      = pull
-    plo     = pull origin
-    plom    = pull origin master
-		# plod: pull from the default remote branch
-		plod		= !git pull origin $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
-    sync    = !git pull && git push
-    # br: -r for remote branches
-    br      = branch
-    brD     = branch -D
-    # co: - for getting back to previous branch
-    co      = checkout
-    cob     = checkout -b
-    cor     = checkout --track
-    com     = checkout master
-    # cod: checkout to the default branch
-    cod	    = !git switch $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
-    f       = fetch
-    fo      = fetch origin
-		rename	= branch -m
-    ls      = log --oneline
-    last    = log -p -1
-    st      = !git add --all && git stash
-    stl	    = stash list
-    stp     = stash pop
-    sta     = stash apply
-    alias   = !git config -l | grep alias | cut -c 7-
-    wip     = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
-    cp      = cherry-pick
+	# default: is preset for cloned repos, set manually: git remote set-head origin -a
+	default = !awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD
+	s       = status
+	d       = diff
+	dc      = diff --cached
+	ds      = diff --stat
+	a       = add
+	# au: add only modified and deleted files
+	au      = add -u
+	aa      = add --all
+	c       = commit
+	cm      = commit -m
+	ca      = commit --amend -m
+	can     = commit --amend --no-edit
+	p       = push
+	po      = push origin
+	pom     = push origin master
+	pot     = push origin --tags
+	pl      = pull
+	plo     = pull origin
+	plom    = pull origin master
+	plod    = !git pull origin $(git default)
+	rbd     = !git rebase $(git default)
+	# br: -r for remote branches
+	br      = branch
+	brD     = branch -D
+	# co: - for getting back to previous branch
+	co      = checkout
+	cob     = checkout -b
+	cor     = checkout --track
+	com     = checkout master
+	# cod: checkout to the default branch
+	cod     = !git switch $(git default)
+	f       = fetch
+	fo      = fetch origin
+	rename  = branch -m
+	ls      = log --oneline
+	last    = log -p -1
+	st      = !git add --all && git stash
+	stl     = stash list
+	sts     = stash show -p
+	stp     = stash pop
+	sta     = stash apply
+	stD     = stash drop
+	alias   = !git config -l | grep alias | cut -c 7-
+	# use A..B to cherry pick a range [A exclusive]
+	cp      = cherry-pick
+	wip     = for-each-ref --sort='authordate:iso8601' \
+				--format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+[commit]
+	template = /Users/kunalkundu/.stCommitMsg
+	gpgsign = true

@@ -14,6 +14,9 @@ bind "set show-all-if-ambiguous on"
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:~/.local/bin:~/.ghcup/bin:~/.cabal/bin
 
+# go (for delve)
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,7 +1,7 @@
 [user]
-	name       = Kunal Kundu
-	email      = kunal99kundu@gmail.com
-	signingkey = 142E0220E496E871
+	name        = Kunal Kundu
+	email       = kunal99kundu@gmail.com
+	signingkey  = 142E0220E496E871
 [github]
 	user = tinfoil-knight
 [core]
@@ -13,6 +13,10 @@
 	defaultBranch = master
 [gpg]
 	program = gpg
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
 [alias]
 	# default: is preset for cloned repos, set manually: git remote set-head origin -a
 	default = !awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD
@@ -45,7 +49,6 @@
 	cob     = checkout -b
 	cor     = checkout --track
 	com     = checkout master
-	# cod: checkout to the default branch
 	cod     = !git switch $(git default)
 	f       = fetch
 	fo      = fetch origin
@@ -59,10 +62,6 @@
 	sta     = stash apply
 	stD     = stash drop
 	alias   = !git config -l | grep alias | cut -c 7-
+	cl      = !git log --oneline $(git describe --tags --abbrev=0 @^)..@ --pretty=format:"%s"
 	# use A..B to cherry pick a range [A exclusive]
 	cp      = cherry-pick
-	wip     = for-each-ref --sort='authordate:iso8601' \
-				--format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
-[commit]
-	template = /Users/kunalkundu/.stCommitMsg
-	gpgsign = true

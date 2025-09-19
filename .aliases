@@ -1,5 +1,5 @@
 alias air='~/go/bin/air'
-alias activate='source venv/bin/activate'
+alias activate='source .venv/bin/activate'
 alias docs='npx redoc-cli serve open-api.yaml --watch'
 alias rst='tput reset'
 alias cloc='npx cloc .'
@@ -7,14 +7,16 @@ alias cloc='npx cloc .'
 # Databases
 alias mgo='brew services run mongodb-community'
 alias pg='brew services run postgresql'
+alias sql='sqlite3'
 
 # Alt Homebrew
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # 
 alias py='python3'
-alias hepl='stack ghci'
 alias tf='terraform'
+alias hs='runghc'
+alias dose='docker compose'
 
 # Directory Tools
 alias '..'='cd ..'
@@ -26,7 +28,7 @@ alias hist='history 1'
 # Functions as Alias
 
 cpp() {
-	g++ $1 && ./a.out
+	g++ --std=c++17 -Wall -Wextra -Wpointer-arith $1 && ./a.out
 }
 
 cgo() {
@@ -50,3 +52,17 @@ envup() {
     return 1
   fi
 }
+
+# Move all source items to trash
+trash() {
+    for item in "$@"; do
+        mv -v "$item" ~/.Trash/
+    done
+}
+
+
+# Temp Alias
+alias oss='cd ~/Desktop/myfolder.nosync/oss'
+alias mp='cd ~/Desktop/myfolder.nosync'
+alias site='cd ~/Desktop/myfolder.nosync/personal/machines.fail'
+alias work='cd ~/Desktop/work.nosync/warshall'

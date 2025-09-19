@@ -1,3 +1,6 @@
+# load aliases
+source ~/.aliases
+
 # Enabling and setting git info var to be used in prompt config
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
@@ -17,6 +20,9 @@ export CLICOLOR=1
 
 HISTSIZE=SAVEHIST=20000
 
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -27,3 +33,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 # for putting python@3.10 before python@3.9 in path
 export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"ƒ
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

@@ -1,0 +1,32 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-g": "editor::GoToDefinition",
+      "cmd-l": "go_to_line::Toggle",
+      "alt-f": "editor::Format",
+      "alt-left": "pane::ActivatePreviousItem",
+      "alt-right": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "cmd-b": "workspace::ToggleRightDock",
+      "cmd-shift-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-z": "pane::GoBack"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  }
+]

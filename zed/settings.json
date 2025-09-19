@@ -1,0 +1,46 @@
+{
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
+    }
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "theme": "Zed Legacy: Rosé Pine",
+  "buffer_font_family": "MonoLisa",
+  "buffer_font_size": 14,
+  "terminal": {
+    "font_size": 13
+  },
+  "format_on_save": "off",
+  "base_keymap": "VSCode",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    },
+    "git_gutter": "hide"
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
+  },
+  "file_types": {
+    "Plain Text": ["bun.lock"]
+  },
+  "soft_wrap": "none"
+}
